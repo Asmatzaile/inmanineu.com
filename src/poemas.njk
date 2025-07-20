@@ -1,0 +1,9 @@
+---
+title: Poemas
+---
+
+<ul>
+{%- for poema in collections.poemas -%}
+  <li><a href={{poema.page.url}}>{{poema.data.title}}</a></li>
+{%- endfor -%}
+</ul>
