@@ -1,0 +1,3 @@
+[submodule "src/poemas"]
+	path = src/poemas
+	url = https://github.com/inmanineu/poemas.git
