@@ -4,7 +4,7 @@
     "dev": "npx eleventy --serve",
     "build": "npx eleventy",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --cname inmanineu.com"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2"
