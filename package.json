@@ -2,8 +2,9 @@
   "type": "module",
   "scripts": {
     "dev": "npx eleventy --serve",
+    "update-submodule": "git submodule update --recursive --remote && git restore --staged . && git add src/poemas && git commit -m \"update submodule\"",
     "build": "npx eleventy",
-    "predeploy": "npm run build",
+    "predeploy": "npm run update-submodule & npm run build",
     "deploy": "gh-pages -d dist --cname inmanineu.com"
   },
   "dependencies": {
