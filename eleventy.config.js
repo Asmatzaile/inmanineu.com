@@ -10,7 +10,7 @@ export default async function(eleventyConfig) {
 		return collectionApi.getFilteredByGlob("**/poemas/*.md");
 	});
     eleventyConfig.addFilter("formatoFecha", value => {
-        if (value === null || value === undefined) return "Fecha desconocida";
+        if (value === null || value === undefined) return "fecha desconocida";
         const months = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
         const date = new Date(value);
         return months[date.getMonth()] + " " + date.getFullYear();
