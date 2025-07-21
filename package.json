@@ -1,9 +1,15 @@
 {
+  "type": "module",
   "scripts": {
-    "start": "npx eleventy --serve"
+    "dev": "npx eleventy --serve",
+    "build": "npx eleventy",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2"
   },
-  "type": "module"
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }
