@@ -1,9 +1,13 @@
 import markdownIt from "markdown-it";
-import fs from 'node:fs/promises'
+import fs from 'node:fs/promises';
+import { HtmlBasePlugin } from "@11ty/eleventy";
 
 export default async function(eleventyConfig) {
     eleventyConfig.setInputDirectory("src");
     eleventyConfig.setOutputDirectory("dist");
+    eleventyConfig.addPassthroughCopy("src/bundle.css");
+    eleventyConfig.addPassthroughCopy({"src/poemas/media": "media"});
+    eleventyConfig.addPlugin(HtmlBasePlugin); // so that image paths are correct
     eleventyConfig.addGlobalData("layout", "layouts/base.njk");
     eleventyConfig.setLibrary("md", markdownIt({breaks: true}));
 	eleventyConfig.addCollection("poemas", function (collectionApi) {
