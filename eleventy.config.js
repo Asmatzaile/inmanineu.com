@@ -9,6 +9,12 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addCollection("poemas", function (collectionApi) {
 		return collectionApi.getFilteredByGlob("**/poemas/*.md");
 	});
+    eleventyConfig.addFilter("formatoFecha", value => {
+        if (value === null || value === undefined) return "Fecha desconocida";
+        const months = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+        const date = new Date(value);
+        return months[date.getMonth()] + " " + date.getFullYear();
+    });
 
     // TODO: remove if 'virtual data files' are a thing
     eleventyConfig.on("eleventy.before", async () => {
